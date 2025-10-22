@@ -3,7 +3,7 @@ from typing import Optional
 
 # Base model for an Product, used for reading/returning Product data
 class Product(BaseModel):
-    id: int
+    product_id: int
     name: str
     price: int
 
@@ -24,7 +24,7 @@ class ProductCreate(BaseModel):
 # Schema for updating an Product (input)
 # All fields are optional for partial updates
 class ProductUpdate(BaseModel):
-    id : int = Field(
+    product_id : int = Field(
         ...,
         description="The unique identifier of the Product to be updated."
     )
@@ -42,4 +42,4 @@ class ProductUpdate(BaseModel):
 
 # Schema for removing an Product (input)
 class ProductRemove(BaseModel):
-    id : int
+    product_id : int
